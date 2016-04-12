@@ -69,8 +69,7 @@ class YouTube extends WebResourceUrlExtractor {
       json = new JsonSlurper().parseText(openURL(apiUrl, user_agent))
     }
 
-	  //def containerThumbnailUrl = items?.find { it -> it.additionalInfo['thumb'] != null }?.additionalInfo['thumb']
-	  def containerThumbnailUrl = null;
+	  def containerThumbnailUrl = items?.find { it -> it.additionalInfo['thumb'] != null }?.additionalInfo['thumb']
 
       return new WebResourceContainer(items: items, thumbnailUrl: containerThumbnailUrl)
     }
